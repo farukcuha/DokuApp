@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/siparisitemborder"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp">
+        <TextView
+            android:id="@+id/siparisno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sipariş Numarası: 145326458963"
+            android:textSize="20sp"
+            android:textColor="#E91E63"/>
+        <TextView
+            android:id="@+id/siparistarihi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sipariş Tarihi: 26.01.2002"
+            android:textSize="20sp"
+            android:textColor="#FF5722" />
+        <TextView
+            android:id="@+id/toplamtutar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ödenen Tutar: 456 TL"
+            android:textSize="20sp"
+            android:textColor="#FF5722"/>
+        <TextView
+            android:id="@+id/siparisdurumu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sipariş Durumu: Kargoya Verildi"
+            android:textSize="20sp"
+            android:textColor="#FF5722"/>
+</LinearLayout>

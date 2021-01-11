@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:layout_insetEdge="bottom">
+
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adresadi"
+        android:text="Ev"
+        android:textSize="18sp"
+        android:textColor="#FF5722"
+        android:paddingLeft="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adsoyad"
+        android:text="Ahmet Faruk Çuha"
+        android:textColor="#605C2E"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/adres"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Şehit Rafet Karacan Bulvarı No: 50/1
+Mimar Sinan Erkek Öğrenci Yurdu
+"              android:textColor="#605C2E"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ililce"
+        android:text="İzmit/Kocaeli"
+        android:textColor="#605C2E"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/telefonno"
+        android:text="05510527048"
+        android:textColor="#605C2E"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+</LinearLayout>
