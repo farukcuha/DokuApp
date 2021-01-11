@@ -21,8 +21,8 @@ public class SiparisAyrinti extends AppCompatActivity {
     private ImageButton kopyala, onayla;
     private TextView total;
     private RecyclerView recyclerView;
-    String siparisId;
-    SiparişAyrintiAdapter adapter;
+    private String siparisId;
+    private SiparişAyrintiAdapter adapter;
 
 
 
