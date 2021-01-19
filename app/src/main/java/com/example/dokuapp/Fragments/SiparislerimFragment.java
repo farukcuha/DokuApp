@@ -22,7 +22,6 @@ public class SiparislerimFragment extends Fragment {
     RecyclerView recyclerView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
-    String kullaniciId = auth.getCurrentUser().getUid();
     SiparisAdapter adapter;
 
 
