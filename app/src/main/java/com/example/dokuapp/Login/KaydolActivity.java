@@ -82,10 +82,10 @@ public class KaydolActivity extends AppCompatActivity {
                     yol = FirebaseFirestore.getInstance().collection("Kullanıcılar").document(kullaniciID);
 
 
-                    hashMap.put("Kullanıcı Adı ve Soyadı", str_kullaniciAdSoyad);
-                    hashMap.put("Kullanıcı E-posta", str_kullaniciEposta);
-                    hashMap.put("Kullanıcı Şifre", str_kullaniciSifre);
-                    hashMap.put("Kullanıcı Id", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    hashMap.put("adSoyad", str_kullaniciAdSoyad);
+                    hashMap.put("email", str_kullaniciEposta);
+                    hashMap.put("sifre", str_kullaniciSifre);
+                    hashMap.put("kullaniciId", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                     yol.set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

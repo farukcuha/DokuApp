@@ -17,6 +17,10 @@ import com.example.dokuapp.Values.SiparisBilgiler;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SiparisAdapter extends FirestoreRecyclerAdapter<SiparisBilgiler, SiparisAdapter.SiparisHolder> {
 
     public SiparisAdapter(@NonNull FirestoreRecyclerOptions<SiparisBilgiler> options) {
@@ -29,7 +33,6 @@ public class SiparisAdapter extends FirestoreRecyclerAdapter<SiparisBilgiler, Si
         holder.siparisTarihi.setText("Sipariş Tarihi: " + model.getSiparisTarihi());
         holder.toplamTutar.setText("Toplam Tutar: " + model.getOdenenTutar());
         holder.kargoDurumu.setText("Sipariş Durumu: " + model.getSiparisDurumu());
-        Log.d("a", model.getKargoTakipNo());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

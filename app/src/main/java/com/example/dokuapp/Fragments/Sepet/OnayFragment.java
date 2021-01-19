@@ -27,10 +27,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.ServerTimestamp;
+import com.google.type.Date;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -58,6 +61,9 @@ public class OnayFragment extends Fragment {
 
     ProgressDialog siparisOlusturma;
     AlertDialog siparisUyari;
+
+    @ServerTimestamp
+    Date time;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -186,19 +192,13 @@ public class OnayFragment extends Fragment {
        HashMap<String, Object> hashMap = new HashMap<>();
 
        hashMap.put("siparisNumarasi", (id_tarih+id_saat));
-       hashMap.put("siparisTarihi", str_tarih+" - "+str_saat);
+       hashMap.put("siparisTarihi", str_tarih + " - " + str_saat);
+       hashMap.put("kargoFirma", null);
        hashMap.put("odenenTutar", getArguments().get("total"));
        hashMap.put("siparisDurumu", "Kargoya Verildi");
        hashMap.put("kargoTakipNo", "123564795");
        hashMap.put("kullaniciId", kullaniciId);
        hashMap.put("tamamlandimi", false);
-
-
-
-
-
-
-
 
        db.collection("Siparişler").document(siparisid).set(hashMap)
                .addOnCompleteListener(new OnCompleteListener<Void>() {

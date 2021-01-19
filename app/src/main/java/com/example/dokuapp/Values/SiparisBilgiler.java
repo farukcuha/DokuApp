@@ -1,5 +1,7 @@
 package com.example.dokuapp.Values;
 
+import com.google.firebase.Timestamp;
+
 public class SiparisBilgiler {
     private String siparisNumarasi;
     private String siparisTarihi;
