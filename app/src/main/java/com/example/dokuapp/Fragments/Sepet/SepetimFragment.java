@@ -51,10 +51,6 @@ public class SepetimFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_sepetimragment, container, false);
         final TextView sepetfiyattoplam = view.findViewById(R.id.sepettoplamfiyat);
 
-        
-
-
-
         Query query1 = db.collection("Kullanıcılar").document(kullaniciId)
                 .collection("Sepet").orderBy("sepetUrunToplamFiyat");
 
@@ -106,12 +102,6 @@ public class SepetimFragment extends Fragment {
                             bundle.putString("total", sepetfiyattoplam.getText().toString());
                             fragment.setArguments(bundle);
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
-                        }
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
                         }
                     }
                 });
