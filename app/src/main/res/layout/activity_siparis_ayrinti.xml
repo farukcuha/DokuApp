@@ -1,95 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SiparisAyrinti">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerview"/>
+        android:id="@+id/recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:ignore="MissingConstraints" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:layout_marginVertical="5dp"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:layout_gravity="bottom"
-        android:background="@drawable/cerceve"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/mavicerceve">
 
         <TextView
-            android:id="@+id/bekletici"
-            android:layout_width="wrap_content"
+            android:id="@+id/adresadii"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siparişiniz en kısa sürede kargoya verilecektir."
+
+            android:text="Ev"
+            android:textColor="#FF5722"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/adsoyad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Ahmet Faruk Çuha"
+            android:textColor="#2B2B2B"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/adres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Şehit Rafet Karacan Bulvarı No: 50/1
+Mimar Sinan Erkek Öğrenci Yurdu
+"
+            android:textColor="#605C2E"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/ililce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="İzmit/Kocaeli"
+            android:textColor="#605C2E"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/telefonno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="05510527048"
+            android:textColor="#605C2E"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:background="@drawable/durumborder"
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/siparisdurumu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Yeni Sipariş"
             android:textAlignment="center"
-            android:textColor="#FF5722"
-            android:textSize="18sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.425"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Toplam"
-            android:textColor="#FF5722"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.163" />
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="5dp">
 
-        <TextView
-            android:id="@+id/sepettoplamfiyat"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Kargo Takip No:"
+                android:textAlignment="textStart"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/kargotakipno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="25468799513"
+                android:textAlignment="textEnd"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="#FF5722"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.163" />
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="5dp">
 
-        <ImageButton
-            android:id="@+id/kopyala"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Toplam Tutar:"
+                android:textAlignment="textStart"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/fiyat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="120 TL"
+                android:textAlignment="textEnd"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/kopyala"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.948"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.826"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="353dp">
 
-        <ImageButton
-            android:id="@+id/siparisionayla"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Sipariş Numarası:"
+                android:textAlignment="textStart"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/siparisno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="25468799513"
+                android:textAlignment="textEnd"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/siparisionayla"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.826"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Sipariş Tarihi:"
+                android:textAlignment="textStart"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tarih"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="26.01.2002 - 15.55"
+                android:textAlignment="textEnd"
+                android:textSize="22sp" />
+
+        </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

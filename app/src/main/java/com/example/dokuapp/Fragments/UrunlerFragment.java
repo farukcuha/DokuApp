@@ -23,10 +23,7 @@ import com.squareup.picasso.Picasso;
 
 public class UrunlerFragment extends Fragment{
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
+
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference documentReference = db.collection("Ürünler");

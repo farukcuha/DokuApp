@@ -31,15 +31,10 @@ public class SiparisAyrinti extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_siparis_ayrinti);
 
-        kopyala = findViewById(R.id.kopyala);
-        onayla = findViewById(R.id.siparisionayla);
+
         total = findViewById(R.id.sepettoplamfiyat);
         recyclerView = findViewById(R.id.recyclerview);
 
-        /*String siparişno = getIntent().getExtras().getString("Sipariş Numarası");
-        String sipariştarihi = getIntent().getExtras().getString("Sipariş Tarihi");
-        String toplamtutar = getIntent().getExtras().getString("Toplam Tutar");
-        String siparişdurumu = getIntent().getExtras().getString("Sipariş Durumu");*/
 
         siparisId = getIntent().getExtras().getString("Sipariş Numarası");
 
