@@ -15,6 +15,7 @@ import com.example.dokuapp.R;
 import com.example.dokuapp.Values.SepetUrun;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SiparişAyrintiAdapter extends FirestoreRecyclerAdapter<SepetUrun, SiparişAyrintiAdapter.SiparisAyrintiHolder> {
 
@@ -27,10 +28,11 @@ public class SiparişAyrintiAdapter extends FirestoreRecyclerAdapter<SepetUrun, 
     protected void onBindViewHolder(@NonNull SiparisAyrintiHolder holder, int position, @NonNull SepetUrun model) {
         Glide.with(holder.itemView.getContext()).load(model.getSepetUrunResim()).centerCrop().into(holder.resim);
         holder.isim.setText(model.getSepetUrunAdi());
-        holder.fiyat.setText(model.getSepetUrunBirimFiyat() + " ₺");
-        holder.adet.setText(String.valueOf(model.getSepetUrunAdet()));
+        holder.fiyat.setText(model.getSepetUrunToplamFiyat() + " ₺");
 
-        Log.d("xsacddvfbf", model.getSepetUrunAdi());
+        holder.adet.setText(model.getSepetUrunAdet() + " " + model.getSepetUrunSatisTur());
+
+
 
     }
 

@@ -110,7 +110,39 @@ Mimar Sinan Erkek Öğrenci Yurdu
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
+            android:visibility="gone"
+            android:id="@+id/kargolayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="5dp">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Kargo Takip No:"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+
+                android:id="@+id/kargotakipno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="25468799513"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/kargolayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -123,20 +155,22 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Kargo Takip No:"
+                android:text="Kargo Firma:"
                 android:textAlignment="textStart"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/kargotakipno"
+
+                android:id="@+id/kargoFirma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="25468799513"
+                android:text="Aras"
                 android:textAlignment="textEnd"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -154,7 +188,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="Toplam Tutar:"
                 android:textAlignment="textStart"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/fiyat"
@@ -163,7 +197,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="120 TL"
                 android:textAlignment="textEnd"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -184,7 +218,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="Sipariş Numarası:"
                 android:textAlignment="textStart"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/siparisno"
@@ -193,7 +227,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="25468799513"
                 android:textAlignment="textEnd"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -214,7 +248,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="Sipariş Tarihi:"
                 android:textAlignment="textStart"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tarih"
@@ -223,7 +257,7 @@ Mimar Sinan Erkek Öğrenci Yurdu
                 android:layout_weight="0.5"
                 android:text="26.01.2002 - 15.55"
                 android:textAlignment="textEnd"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

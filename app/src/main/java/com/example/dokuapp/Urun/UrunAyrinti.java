@@ -109,6 +109,7 @@ public class UrunAyrinti extends AppCompatActivity {
                 sepeturun.put("sepetUrunBirimFiyat", intent.getExtras().getString("Urunfiyati"));
                 sepeturun.put("sepetUrunAdet", urunayrintiurunadet);
                 sepeturun.put("sepetUrunToplamFiyat", ksepetUrunToplamFiyat);
+                sepeturun.put("sepetUrunSatisTur", intent.getExtras().get("Urunsatisturu"));
 
                 firestore.collection("Kullanıcılar").document(kullaniciId).collection("Sepet").document((String) sepeturun.get("sepetUrunAdi")).set(sepeturun);
             }

@@ -2,6 +2,8 @@ package com.example.dokuapp.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +16,14 @@ import com.example.dokuapp.R;
 import com.example.dokuapp.Adapters.SiparisAdapter;
 import com.example.dokuapp.Values.SiparisBilgiler;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class SiparislerimFragment extends Fragment {
     RecyclerView recyclerView;
@@ -32,7 +39,10 @@ public class SiparislerimFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview);
 
         Query query = db.collection("Siparişler")
-                .orderBy("odenenTutar");
+                .whereEqualTo("kullaniciId", auth.getCurrentUser().getUid()).orderBy("odenenTutar", Query.Direction.ASCENDING);
+
+
+
 
         FirestoreRecyclerOptions<SiparisBilgiler> options = new FirestoreRecyclerOptions.Builder<SiparisBilgiler>()
                 .setQuery(query, SiparisBilgiler.class)

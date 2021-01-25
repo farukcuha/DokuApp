@@ -195,7 +195,7 @@ public class OnayFragment extends Fragment {
        hashMap.put("siparisTarihi", str_tarih + " - " + str_saat);
        hashMap.put("kargoFirma", null);
        hashMap.put("odenenTutar", getArguments().get("total"));
-       hashMap.put("siparisDurumu", "Kargoya Verildi");
+       hashMap.put("siparisDurumu", "Yeni Sipariş");
        hashMap.put("kargoTakipNo", "123564795");
        hashMap.put("kullaniciId", kullaniciId);
        hashMap.put("tamamlandimi", false);

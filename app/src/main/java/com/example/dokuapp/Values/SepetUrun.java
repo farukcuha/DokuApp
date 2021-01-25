@@ -6,17 +6,21 @@ public class SepetUrun{
     private String sepetUrunBirimFiyat;
     private int sepetUrunAdet;
     private int sepetUrunToplamFiyat;
+    private String sepetUrunSatisTur;
+
+
 
     public SepetUrun(){
 
     }
 
-    public SepetUrun(String sepetUrunAdi, String sepetUrunResim, String sepetUrunBirimFiyat, int sepetUrunAdet, int sepetUrunToplamFiyat) {
+    public SepetUrun(String sepetUrunAdi, String sepetUrunResim, String sepetUrunBirimFiyat, int sepetUrunAdet, int sepetUrunToplamFiyat, String sepetUrunSatisTur) {
         this.sepetUrunAdi = sepetUrunAdi;
         this.sepetUrunResim = sepetUrunResim;
         this.sepetUrunBirimFiyat = sepetUrunBirimFiyat;
         this.sepetUrunAdet = sepetUrunAdet;
         this.sepetUrunToplamFiyat = sepetUrunToplamFiyat;
+        this.sepetUrunSatisTur = sepetUrunSatisTur;
 
     }
 
@@ -33,4 +37,8 @@ public class SepetUrun{
     public int getSepetUrunAdet() { return sepetUrunAdet; }
 
     public int getSepetUrunToplamFiyat() { return sepetUrunToplamFiyat; }
+
+    public String getSepetUrunSatisTur() {
+        return sepetUrunSatisTur;
+    }
 }
