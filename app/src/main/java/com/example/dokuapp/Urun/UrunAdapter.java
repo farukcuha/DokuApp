@@ -20,8 +20,10 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class UrunAdapter extends FirestoreRecyclerAdapter<Urun, UrunAdapter.UrunHolder>{
     UrunlerFragment urunlerFragment = new UrunlerFragment();
-    public UrunAdapter(@NonNull FirestoreRecyclerOptions<Urun> options) {
+    private TextView emptyText;
+    public UrunAdapter(@NonNull FirestoreRecyclerOptions<Urun> options, TextView emptyText) {
         super(options);
+        this.emptyText = emptyText;
     }
 
     @Override
@@ -54,6 +56,12 @@ public class UrunAdapter extends FirestoreRecyclerAdapter<Urun, UrunAdapter.Urun
     public UrunHolder onCreateViewHolder(@NonNull final ViewGroup parent, final int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.urunitems, parent,false);
         UrunHolder urunHolder = new UrunHolder(v);
+        if(getSnapshots().isEmpty()){
+            emptyText.setVisibility(View.VISIBLE);
+        }
+        else {
+            emptyText.setVisibility(View.GONE);
+        }
         return urunHolder;
     }
     public static class UrunHolder extends RecyclerView.ViewHolder {

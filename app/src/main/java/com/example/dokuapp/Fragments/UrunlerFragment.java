@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.dokuapp.R;
 import com.example.dokuapp.Urun.Urun;
@@ -19,24 +20,25 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
 
 
 public class UrunlerFragment extends Fragment{
-
-
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference documentReference = db.collection("Ürünler");
     private RecyclerView recyclerView;
     private View view;
     private UrunAdapter adapter;
+    private TextView emptyText;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_urunler, container, false);
-        setUpRecyclerView(view);
+        emptyText = view.findViewById(R.id.emptytext);
+        setUpRecyclerView(view, emptyText);
         return view;
     }
 
@@ -57,14 +59,14 @@ public class UrunlerFragment extends Fragment{
         });
     }
 
-    private void  setUpRecyclerView(View v){
+    private void  setUpRecyclerView(View v, TextView emptyText){
         Query query = documentReference.orderBy("ürünAdi", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<Urun> options = new FirestoreRecyclerOptions.Builder<Urun>()
                 .setQuery(query, Urun.class)
                 .build();
 
-        adapter = new UrunAdapter(options);
+        adapter = new UrunAdapter(options, emptyText);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView = v.findViewById(R.id.recyclerview);

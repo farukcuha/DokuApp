@@ -1,5 +1,6 @@
 package com.example.dokuapp.Fragments.Sepet;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,8 @@ public class AdresFragment extends Fragment {
     String kullaniciId = firebaseAuth.getCurrentUser().getUid();
     AdresAdapter adresAdapter;
     Bundle bundle = new Bundle();
-    ProgressBar pb;
+    ProgressDialog pd;
+
 
     public Bundle getBundle() {
         return bundle;
@@ -46,7 +48,7 @@ public class AdresFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_adres, container, false);
-        pb = view.findViewById(R.id.progress_bar);
+        pd = new ProgressDialog(view.getContext());
         final CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("Kullanıcılar").
                 document(kullaniciId).collection("Adresler");
 
@@ -95,7 +97,7 @@ public class AdresFragment extends Fragment {
         devam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pb.setVisibility(View.VISIBLE);
+                pd.show();
 
                 collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -103,7 +105,6 @@ public class AdresFragment extends Fragment {
                         QuerySnapshot documentSnapshot = task.getResult();
                         if(documentSnapshot.isEmpty()){
                             Toast.makeText(getContext(), "Adres bilgisi giriniz.", Toast.LENGTH_SHORT).show();
-
                         }
                         else{
                             collectionReference.whereEqualTo("durum", true).
@@ -125,7 +126,6 @@ public class AdresFragment extends Fragment {
 
                                 }
                             });
-
                         }
 
                     }
@@ -133,8 +133,7 @@ public class AdresFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
-                            pb.setVisibility(View.GONE);
-
+                            pd.dismiss();
                         }
                     }
                 });
@@ -152,7 +151,18 @@ public class AdresFragment extends Fragment {
         adressil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pd.show();
+                collectionReference.document(adresAdapter.getSeciliAdres()).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            pd.dismiss();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "Bir şeyler ters gitti", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sepetitem"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:id="@+id/sepetitem">
-
-
+    android:layout_height="100dp">
 
 
     <ProgressBar
@@ -26,8 +23,6 @@
         android:layout_marginStart="8dp"
         android:src="@drawable/urunler"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/xml_spt_btneksi"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -42,56 +37,50 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/xml_spt_resim"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.219"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/xml_spt_btneksi"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="112dp"
-        android:text="─"
-        android:onClick="sepetbutoneksi"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/xml_spt_btnarti"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="188dp"
-
-        android:text="+"
-        android:onClick="sepetbutonarti"
-        android:textSize="15sp"
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/xml_spt_resim"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866"
-        tools:ignore="MissingConstraints"
-        />
+        app:layout_constraintVertical_bias="0.81"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/xml_sepet_adet"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="1dp"
-        android:gravity="center"
-        android:text="1"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/xml_spt_btnarti"
-        app:layout_constraintStart_toEndOf="@+id/xml_spt_btneksi"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84000003"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/xml_spt_btneksi"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="sepetbutoneksi"
+            android:text="─"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/xml_sepet_adet"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/xml_spt_btnarti"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="sepetbutonarti"
+            android:text="+"
+            android:textSize="15sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/xml_spt_urunfiyat"
@@ -102,8 +91,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout10"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.78"
         tools:ignore="MissingConstraints" />

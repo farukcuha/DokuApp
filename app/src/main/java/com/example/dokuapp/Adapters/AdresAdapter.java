@@ -25,9 +25,14 @@ public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresA
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth kullanici = FirebaseAuth.getInstance();
     String kullaniciId = kullanici.getCurrentUser().getUid();
+    private String seciliAdres;
 
     public AdresAdapter(@NonNull FirestoreRecyclerOptions<AdresBilgiler> options) {
         super(options);
+    }
+
+    public String getSeciliAdres() {
+        return seciliAdres;
     }
 
     @Override
@@ -48,6 +53,7 @@ public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresA
 
         if(selectedposition == position){
             adresSecici(true, model, holder);
+            seciliAdres = model.getAdresBasligi();
         }
         else{
             adresSecici(false, model, holder);

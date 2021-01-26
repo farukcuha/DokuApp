@@ -12,7 +12,6 @@
         <activity android:name=".SiparisAyrinti" />
         <activity android:name=".Urun.UrunAyrinti" />
         <activity android:name=".DokuAnasayfaActivity" />
-        <activity android:name=".Login.BizKimizActivity" />
         <activity android:name=".Login.KaydolActivity" />
         <activity android:name=".Login.GirisYapActivity" />
         <activity android:name=".Login.BaslangicActivity">

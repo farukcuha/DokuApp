@@ -129,56 +129,53 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/sepeteklecerceve"
+        android:background="@drawable/blackborder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/xml_spt_eksi"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:text="─"
-            android:textSize="25sp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/xml_sepetekle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/xml_sepet_adet"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="1"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/xml_spt_eksi"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            <Button
+                android:id="@+id/xml_spt_eksi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="─"
+                android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/xml_spt_arti"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="+"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="5dp"
-            app:layout_constraintStart_toEndOf="@+id/xml_sepet_adet"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.466"
-            tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/xml_sepet_adet"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="1"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/xml_spt_arti"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                android:textSize="25sp" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/xml_sepetekle"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/sepetbutton"
+            android:text="Sepete Ekle"
+            android:textSize="18sp"
+            android:background="@drawable/buton1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

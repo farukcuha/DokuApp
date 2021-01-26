@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class BaslangicActivity extends AppCompatActivity {
 
-    private Button btn_girisyap_1, btn_kaydol_1, btn_bizkimiz;
+    private Button btn_girisyap_1, btn_kaydol_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class BaslangicActivity extends AppCompatActivity {
 
             btn_girisyap_1 = findViewById(R.id.xml_btn_girisyap_1);
             btn_kaydol_1 = findViewById(R.id.xml_btn_kaydol_1);
-            btn_bizkimiz = findViewById(R.id.xml_btn_bizkimiz);
 
             btn_girisyap_1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -40,13 +39,6 @@ public class BaslangicActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(BaslangicActivity.this, KaydolActivity.class));
-                }
-            });
-
-            btn_bizkimiz.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(BaslangicActivity.this, BizKimizActivity.class));
                 }
             });
         }

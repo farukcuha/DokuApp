@@ -6,6 +6,7 @@ public class AdresBilgiler {
     private String AdiSoyadi;
     private String IlIlce;
     private String Telefonno;
+    private boolean durum;
 
 
     public AdresBilgiler () {
@@ -31,11 +32,17 @@ public class AdresBilgiler {
         return Telefonno;
     }
 
-    public AdresBilgiler(String adres, String adresBasligi, String adiSoyadi, String ilIlce, String telefonno) {
+    public boolean getDurum() {
+        return durum;
+    }
+
+    public AdresBilgiler(String adres, String adresBasligi, String adiSoyadi, String ilIlce, String telefonno, boolean durum) {
         Adres = adres;
         AdresBasligi = adresBasligi;
         AdiSoyadi = adiSoyadi;
         IlIlce = ilIlce;
         Telefonno = telefonno;
+        this.durum = durum;
+
     }
 }

@@ -80,6 +80,7 @@ public class Adresklemedialog extends AppCompatDialogFragment {
                 hashMap.put("IlIlce", str_il+"/"+str_ilce);
                 hashMap.put("Adres", str_adres);
                 hashMap.put("Telefonno", str_telno);
+                hashMap.put("durum", false);
 
                 if(TextUtils.isEmpty(str_adisoyadi)
                         ||  TextUtils.isEmpty(str_adresbasligi)
