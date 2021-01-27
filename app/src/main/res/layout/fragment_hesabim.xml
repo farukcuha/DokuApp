@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.HesabimFragment">
+    tools:context=".Fragments.HesabimFragment"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/imageView2"
@@ -12,12 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07999998"
-        tools:ignore="MissingConstraints">
+        android:layout_marginTop="50dp">
 
         <ImageView
             android:layout_width="150dp"
@@ -26,6 +23,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/kullaniciAd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -37,73 +35,118 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
+
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.22000003"
-        tools:ignore="MissingConstraints">
-
-
-        <TextView
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/durumborder"
-            android:padding="10dp"
-            android:text="E-mail: "
-            android:textSize="25sp" />
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E - mail"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                />
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/durumborder"
-            android:padding="10dp"
-            android:text="Yardım"
-            android:textSize="25sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/durumborder"
-            android:padding="10dp"
-            android:text="Geri Bildirim Gönder"
-            android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/emaill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/durumborder"
+                    android:padding="10dp"
+                    android:text="ahmetfarukcuha@hotmail.com"
+                    android:textSize="20sp"
+                    android:layout_weight="0.1"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/durumborder"
-            android:padding="10dp"
-            android:text="Hesabı Sil"
-            android:textSize="25sp" />
+                <ImageView
+                    android:id="@+id/emailbtn"
+                    android:layout_weight="0.9"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:src="@drawable/changeicon"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Şifre"
+                android:textSize="20sp"
+
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/sifre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/durumborder"
+                    android:padding="10dp"
+                    android:text="************"
+                    android:textSize="22sp"
+                    android:layout_weight="0.1"
+                    android:inputType="numberPassword"
+                    />
+
+                <ImageView
+                    android:id="@+id/sifrebtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:src="@drawable/changeicon"
+                    android:layout_weight="0.9"/>
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/hesabisil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/redborder"
+                android:padding="10dp"
+                android:text="Hesabı Sil"
+                android:textAlignment="center"
+                android:textColor="#D12323"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/redborder"
+                android:padding="10dp"
+                android:text="Çıkış Yap"
+                android:textAlignment="center"
+                android:textColor="#D12323"
+                android:textSize="25sp" />
 
 
-    <TextView
-        android:layout_margin="10dp"
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/redborder"
-        android:padding="10dp"
-        android:text="Çıkış Yap"
-        android:textAlignment="center"
-        android:textColor="#D12323"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
