@@ -7,6 +7,11 @@ Main Screen               |  Login Screen             |  Sign In Screen
 :-------------------------:|:------------------------:|:----------------------:
 <img src="/img/main.png" width="300">|<img src="/img/login.png" width="300">|<img src="/img/signin.png" width="300">
 
+>There is main screen that contain image and text after the login.
+
+Main Screen| 
+:-------------------------:
+<img src="/img/mainscreen.png" width="300">|
 
 
 
