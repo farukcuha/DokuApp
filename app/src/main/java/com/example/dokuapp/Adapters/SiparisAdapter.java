@@ -2,7 +2,6 @@ package com.example.dokuapp.Adapters;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dokuapp.R;
-import com.example.dokuapp.SiparisAyrinti;
+import com.example.dokuapp.Activities.SiparisAyrinti;
 import com.example.dokuapp.Values.SiparisBilgiler;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class SiparisAdapter extends FirestoreRecyclerAdapter<SiparisBilgiler, SiparisAdapter.SiparisHolder> {
+    private TextView bosyazi;
 
-    public SiparisAdapter(@NonNull FirestoreRecyclerOptions<SiparisBilgiler> options) {
+    public SiparisAdapter(@NonNull FirestoreRecyclerOptions<SiparisBilgiler> options, TextView bosyazi) {
         super(options);
+        this.bosyazi = bosyazi;
     }
 
     @Override
@@ -41,9 +38,6 @@ public class SiparisAdapter extends FirestoreRecyclerAdapter<SiparisBilgiler, Si
                 Intent intent = new Intent(v.getContext(), SiparisAyrinti.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("Sipariş Numarası", model.getSiparisNumarasi());
-                /*bundle.putString("Sipariş Tarihi", model.getSiparisTarihi());
-                bundle.putString("Toplam Tutar", model.getOdenenTutar());
-                bundle.putString("Sipariş Durumu", model.getSiparisDurumu());*/
                 intent.putExtras(bundle);
                 v.getContext().startActivity(intent);
 
@@ -56,6 +50,12 @@ public class SiparisAdapter extends FirestoreRecyclerAdapter<SiparisBilgiler, Si
     @Override
     public SiparisHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.siparisitem, parent, false);
+        if(getSnapshots().isEmpty()){
+            bosyazi.setVisibility(View.VISIBLE);
+        }
+        else {
+            bosyazi.setVisibility(View.GONE);
+        }
         return new SiparisHolder(view);
 
     }

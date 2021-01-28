@@ -2,21 +2,19 @@ package com.example.dokuapp.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.app.ProgressDialog;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.dokuapp.DokuAnasayfaActivity;
+import com.example.dokuapp.Activities.DokuAnasayfaActivity;
 import com.example.dokuapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,10 +27,8 @@ import static android.app.PendingIntent.getActivity;
 public class GirisYapActivity extends AppCompatActivity {
     private EditText girisyapemail, girisyapsifre;
     private Button girisyapbutton;
-    FirebaseAuth girisYetkisi;
-    ProgressDialog pd;
-
-
+    private FirebaseAuth girisYetkisi;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +40,9 @@ public class GirisYapActivity extends AppCompatActivity {
             girisyapbutton = findViewById(R.id.xml_btn_girisyap_2);
 
             girisYetkisi = FirebaseAuth.getInstance();
+
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(GirisYapActivity.this);
+            final SharedPreferences.Editor editor = sharedPreferences.edit();
 
             girisyapbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,6 +67,11 @@ public class GirisYapActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
                                         pd.dismiss();
+
+                                        editor.putString("email", str_giris_email);
+                                        editor.putString("sifre", str_giris_sifre);
+                                        editor.commit();
+
                                         Intent intent = new Intent(GirisYapActivity.this, DokuAnasayfaActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);

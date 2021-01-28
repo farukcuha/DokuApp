@@ -2,7 +2,6 @@ package com.example.dokuapp.Fragments;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,15 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dokuapp.R;
-import com.example.dokuapp.Urun.Urun;
-import com.example.dokuapp.Urun.UrunAdapter;
+import com.example.dokuapp.Values.Urun;
+import com.example.dokuapp.Adapters.UrunAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 
 public class UrunlerFragment extends Fragment{
@@ -31,7 +28,6 @@ public class UrunlerFragment extends Fragment{
     private View view;
     private UrunAdapter adapter;
     private TextView emptyText;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,4 +1,4 @@
-package com.example.dokuapp.Urun;
+package com.example.dokuapp.Adapters;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dokuapp.DokuAnasayfaActivity;
 import com.example.dokuapp.Fragments.UrunlerFragment;
 import com.example.dokuapp.R;
+import com.example.dokuapp.Activities.UrunAyrinti;
+import com.example.dokuapp.Values.Urun;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.dokuapp.R;
 import com.example.dokuapp.Adapters.SiparisAdapter;
@@ -26,28 +27,27 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class SiparislerimFragment extends Fragment {
-    RecyclerView recyclerView;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    FirebaseAuth auth = FirebaseAuth.getInstance();
-    SiparisAdapter adapter;
-
+    private RecyclerView recyclerView;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private SiparisAdapter adapter;
+    private TextView bosyazi;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_siparislerim, container, false);
         recyclerView = view.findViewById(R.id.recyclerview);
+        bosyazi = view.findViewById(R.id.bosyazi);
 
         Query query = db.collection("Siparişler")
                 .whereEqualTo("kullaniciId", auth.getCurrentUser().getUid()).orderBy("odenenTutar", Query.Direction.ASCENDING);
 
 
-
-
         FirestoreRecyclerOptions<SiparisBilgiler> options = new FirestoreRecyclerOptions.Builder<SiparisBilgiler>()
                 .setQuery(query, SiparisBilgiler.class)
                 .build();
-        adapter = new SiparisAdapter(options);
+        adapter = new SiparisAdapter(options, bosyazi);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

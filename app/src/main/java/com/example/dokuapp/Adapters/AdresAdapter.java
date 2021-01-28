@@ -20,11 +20,11 @@ import java.util.HashMap;
 
 public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresAdapter.AdresHolder> {
 
-    View view;
-    int selectedposition;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    FirebaseAuth kullanici = FirebaseAuth.getInstance();
-    String kullaniciId = kullanici.getCurrentUser().getUid();
+    private View view;
+    private int selectedposition;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private final String userId = firebaseAuth.getCurrentUser().getUid();
     private String seciliAdres;
 
     public AdresAdapter(@NonNull FirestoreRecyclerOptions<AdresBilgiler> options) {
@@ -71,7 +71,7 @@ public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresA
         hashMap.put("Telefonno", model.getTelefonno());
         hashMap.put("durum", durum);
 
-        db.collection("Kullanıcılar").document(kullaniciId).collection("Adresler").document(model.getAdresBasligi())
+        db.collection("Kullanıcılar").document(userId).collection("Adresler").document(model.getAdresBasligi())
                 .update(hashMap);
     }
 
@@ -83,7 +83,6 @@ public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresA
     @Override
     public AdresHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adresitem, parent, false);
-
         return new AdresHolder(view);
     }
 
@@ -97,7 +96,6 @@ public class AdresAdapter extends FirestoreRecyclerAdapter<AdresBilgiler, AdresA
 
         public AdresHolder(@NonNull View itemView) {
             super(itemView);
-
             adresadi = itemView.findViewById(R.id.adresadi);
             adsoyad = itemView.findViewById(R.id.adsoyad);
             adres = itemView.findViewById(R.id.adres);

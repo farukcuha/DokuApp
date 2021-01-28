@@ -13,13 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dokuapp.Adapters.AdresAdapter;
 import com.example.dokuapp.Values.AdresBilgiler;
-import com.example.dokuapp.Adresklemedialog;
+import com.example.dokuapp.Activities.Adresklemedialog;
 import com.example.dokuapp.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -59,7 +58,6 @@ public class AdresFragment extends Fragment {
 
         final String sepettoplmafiyat = getArguments().getString("total");
         total.setText(sepettoplmafiyat);
-
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
 

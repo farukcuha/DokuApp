@@ -1,4 +1,4 @@
-package com.example.dokuapp;
+package com.example.dokuapp.Activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dokuapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -107,10 +108,6 @@ public class Adresklemedialog extends AppCompatDialogFragment {
                                 }
                             });
                 }
-
-
-
-
             }
         });
         return builder.create();

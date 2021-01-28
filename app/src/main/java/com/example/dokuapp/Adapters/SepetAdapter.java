@@ -29,16 +29,21 @@ public class SepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, SepetAdapt
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private String kullaniciId = firebaseAuth.getCurrentUser().getUid();
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private TextView sepetToplamText;
+    private int sepetToplam;
 
-    public SepetAdapter(@NonNull FirestoreRecyclerOptions<SepetUrun> options) {
+    public int getSepetToplam() {
+        return sepetToplam;
+    }
+
+    public SepetAdapter(@NonNull FirestoreRecyclerOptions<SepetUrun> options, TextView sepetToplamText) {
         super(options);
+        this.sepetToplamText = sepetToplamText;
     }
 
     @Override
     protected void onBindViewHolder(@NonNull final SepetHolder holder, final int position, @NonNull final SepetUrun model) {
         holder.sepetUrunAdi.setText(model.getSepetUrunAdi());
-
-
 
         Glide.with(holder.itemView.getContext()).load(model.getSepetUrunResim()).listener(new RequestListener<Drawable>() {
             @Override
@@ -53,8 +58,6 @@ public class SepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, SepetAdapt
                 return false;            }
         }).into(holder.sepetUrunResim);
 
-
-
         holder.sepetUrunAdet.setText(String.valueOf(model.getSepetUrunAdet()));
 
         holder.sepetUrunToplamFiyati.setText(String.valueOf(model.getSepetUrunToplamFiyat()) + " ₺");
@@ -66,24 +69,17 @@ public class SepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, SepetAdapt
                 i++;
                 if(i  == 0){
                     firestore.collection("Kullanıcılar").document(kullaniciId)
-                            .collection("Sepet").document(model.getSepetUrunAdi()).delete();
-                }
+                            .collection("Sepet").document(model.getSepetUrunAdi()).delete(); }
                 int k = Integer.parseInt(model.getSepetUrunBirimFiyat()) * i;
-
                 firestore.collection("Kullanıcılar").document(kullaniciId)
                         .collection("Sepet").document(model.getSepetUrunAdi()).update("sepetUrunAdet", i);
 
-
                 holder.sepetUrunAdet.setText(String.valueOf(i));
-
                 firestore.collection("Kullanıcılar").document(kullaniciId)
                         .collection("Sepet").document(model.getSepetUrunAdi()).update("sepetUrunToplamFiyat", k);
-
                 holder.sepetUrunToplamFiyati.setText(String.valueOf((model.getSepetUrunToplamFiyat())));
-
             }
         });
-
         holder.buttoneksi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,28 +87,29 @@ public class SepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, SepetAdapt
                 i--;
                 if(i < 1){
                     firestore.collection("Kullanıcılar").document(kullaniciId)
-                        .collection("Sepet").document(model.getSepetUrunAdi()).delete();
-                        }
+                        .collection("Sepet").document(model.getSepetUrunAdi()).delete(); }
                 int k = Integer.parseInt(model.getSepetUrunBirimFiyat()) * i;
-
                 firestore.collection("Kullanıcılar").document(kullaniciId)
                         .collection("Sepet").document(model.getSepetUrunAdi()).update("sepetUrunAdet", i);
                 holder.sepetUrunAdet.setText(String.valueOf(i));
-
-
                 firestore.collection("Kullanıcılar").document(kullaniciId)
                         .collection("Sepet").document(model.getSepetUrunAdi()).update("sepetUrunToplamFiyat", k);
                 holder.sepetUrunToplamFiyati.setText(String.valueOf(model.getSepetUrunToplamFiyat()) + " ₺");
-
                 holder.sepetUrunToplamFiyati.setText(String.valueOf((model.getSepetUrunToplamFiyat())));
-
             }
         });
     }
+
     @NonNull
     @Override
     public SepetHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sepetitems, parent, false);
+        if(getSnapshots().isEmpty()){
+            sepetToplamText.setVisibility(View.VISIBLE);
+        }
+        else {
+            sepetToplamText.setVisibility(View.GONE);
+        }
         return new SepetHolder(v);
     }
 
@@ -126,7 +123,6 @@ public class SepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, SepetAdapt
 
         public SepetHolder(@NonNull View itemView) {
             super(itemView);
-
             sepetUrunAdi = itemView.findViewById(R.id.xml_spt_ad);
             sepetUrunToplamFiyati = itemView.findViewById(R.id.xml_spt_urunfiyat);
             sepetUrunResim = itemView.findViewById(R.id.xml_spt_resim);

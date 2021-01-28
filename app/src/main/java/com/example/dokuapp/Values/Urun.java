@@ -1,4 +1,4 @@
-package com.example.dokuapp.Urun;
+package com.example.dokuapp.Values;
 
 public class Urun  {
 
@@ -10,7 +10,6 @@ public class Urun  {
     private String ürünResim;
 
     public Urun(){
-
     }
 
     public Urun(String ürünAdi, String ürünFiyati , String ürünTahminiKargo, String ürünAciklama, String ürünSatisTuru, String ürünResim) {

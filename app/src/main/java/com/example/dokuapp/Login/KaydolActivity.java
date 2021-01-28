@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.dokuapp.DokuAnasayfaActivity;
+import com.example.dokuapp.Activities.DokuAnasayfaActivity;
 import com.example.dokuapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,11 +29,12 @@ import java.util.HashMap;
 public class KaydolActivity extends AppCompatActivity {
     private EditText kullaniciAdSoyad, kullaniciEposta, kullaniciSifre;
     private Button kaydolbutton;
-    FirebaseAuth yetki;
-    DocumentReference yol;
-    ProgressDialog pd;
-    HashMap<String, Object> hashMap = new HashMap<>();
-
+    private FirebaseAuth yetki;
+    private DocumentReference yol;
+    private ProgressDialog pd;
+    private HashMap<String, Object> hashMap = new HashMap<>();
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,9 @@ public class KaydolActivity extends AppCompatActivity {
         kaydolbutton = findViewById(R.id.xml_btn_kaydol_2);
 
         yetki = FirebaseAuth.getInstance();
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(KaydolActivity.this);
+        editor = sharedPreferences.edit();
 
         kaydolbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +98,12 @@ public class KaydolActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 pd.dismiss();
-                                Toast.makeText(KaydolActivity.this, "Başarılı", Toast.LENGTH_SHORT).show();
 
+                                editor.putString("email", str_kullaniciEposta);
+                                editor.putString("sifre", str_kullaniciSifre);
+                                editor.commit();
+
+                                Toast.makeText(KaydolActivity.this, "Başarılı", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(KaydolActivity.this, DokuAnasayfaActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);

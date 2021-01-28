@@ -67,9 +67,7 @@ public class OdemeFragment extends Fragment {
         String ililce = getArguments().getString("Adres-IlIlce");
         String telefonno = getArguments().getString("Adres-telefonno");
 
-
         bundle.putAll(getArguments());
-
 
         Log.d("x", adsoyad);
         Log.d("y", adres);

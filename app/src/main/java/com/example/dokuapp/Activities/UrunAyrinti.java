@@ -1,4 +1,4 @@
-package com.example.dokuapp.Urun;
+package com.example.dokuapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,14 +23,14 @@ public class UrunAyrinti extends AppCompatActivity {
     private Button adetarti, adeteksi, sepeteekle;
 
     private TextView urunadet, uruntahminikargo, urunfiyat, urunsatisturu, urunadi, urunaciklama;
-    ProgressBar progressBar;
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private ProgressBar progressBar;
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private String kullaniciId;
     private int urunayrintiurunadet = 1;
     private int ksepetUrunToplamFiyat;
 
-    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-    HashMap<String, Object> sepeturun = new HashMap<>();
+    private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private HashMap<String, Object> sepeturun = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

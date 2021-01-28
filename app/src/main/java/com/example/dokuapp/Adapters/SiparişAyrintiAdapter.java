@@ -29,11 +29,7 @@ public class SiparişAyrintiAdapter extends FirestoreRecyclerAdapter<SepetUrun, 
         Glide.with(holder.itemView.getContext()).load(model.getSepetUrunResim()).centerCrop().into(holder.resim);
         holder.isim.setText(model.getSepetUrunAdi());
         holder.fiyat.setText(model.getSepetUrunToplamFiyat() + " ₺");
-
         holder.adet.setText(model.getSepetUrunAdet() + " " + model.getSepetUrunSatisTur());
-
-
-
     }
 
     @NonNull

@@ -19,15 +19,12 @@ import com.squareup.picasso.Picasso;
 
 public class OnayOzetSepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, OnayOzetSepetAdapter.OnayOzetSepetHolder > {
 
-
-
     public OnayOzetSepetAdapter(@NonNull FirestoreRecyclerOptions<SepetUrun> options) {
         super(options);
     }
 
     @Override
     protected void onBindViewHolder(@NonNull final OnayOzetSepetHolder holder, int position, @NonNull SepetUrun model) {
-
         holder.sepetUrunAdi.setText(model.getSepetUrunAdi());
         holder.sepetUrunAdet.setText(model.getSepetUrunAdet() + " Adet");
         Picasso.get().load(model.getSepetUrunResim()).into((holder.sepetUrunResim), new com.squareup.picasso.Callback() {
@@ -41,13 +38,9 @@ public class OnayOzetSepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, On
             }
             @Override
             public void onError(Exception e) {
-
             }
-
         });
         holder.sepetUrunToplamFiyati.setText(String.valueOf(model.getSepetUrunToplamFiyat()) + " ₺");
-
-
     }
 
     @NonNull
@@ -59,11 +52,11 @@ public class OnayOzetSepetAdapter extends FirestoreRecyclerAdapter<SepetUrun, On
     }
 
     public class OnayOzetSepetHolder extends RecyclerView.ViewHolder {
-        TextView sepetUrunAdi;
-        TextView sepetUrunToplamFiyati;
-        ImageView sepetUrunResim;
-        TextView sepetUrunAdet;
-        ProgressBar pd;
+        private final TextView sepetUrunAdi;
+        private final TextView sepetUrunToplamFiyati;
+        private final ImageView sepetUrunResim;
+        private final TextView sepetUrunAdet;
+        private final ProgressBar pd;
         public OnayOzetSepetHolder(@NonNull View itemView) {
             super(itemView);
             sepetUrunAdi = itemView.findViewById(R.id.xml_spt_ad);

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,7 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +44,10 @@ public class HesabimFragment extends Fragment {
     private DocumentReference reference;
     private ProgressDialog pd;
     private ImageView sifrebtn, emailbtn;
-    AlertDialog.Builder builder;
+    private AlertDialog.Builder builder;
     private HashMap<String, Object> hashMap;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
 
     @Override
@@ -65,11 +70,19 @@ public class HesabimFragment extends Fragment {
         reference = FirebaseFirestore.getInstance().collection("Kullanıcılar").document(kullaniciId);
         builder = new AlertDialog.Builder(getContext());
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        editor = sharedPreferences.edit();
+
 
         cikisYap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), BaslangicActivity.class));
+                Intent intent = new Intent(getContext(), BaslangicActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                editor.remove("email");
+                editor.remove("sifre");
+                editor.apply();
 
             }
         });
@@ -91,11 +104,18 @@ public class HesabimFragment extends Fragment {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
-                                                        startActivity(new Intent(getContext(), BaslangicActivity.class));
+                                                        Intent intent = new Intent(getContext(), BaslangicActivity.class);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        startActivity(intent);
+                                                        editor.remove("email");
+                                                        editor.remove("sifre");
+                                                        editor.apply();
                                                         pd.dismiss();
                                                     }
                                                 }
                                             });
+
+
                                         }
                                     }
                                 });
@@ -224,9 +244,6 @@ public class HesabimFragment extends Fragment {
                                             Toast.makeText(getContext(), "Eski Şifrenizi Hatalı Girdiniz.", Toast.LENGTH_SHORT).show();
                                             pd.dismiss();
                                         }
-
-
-
                                 }
 
                             }

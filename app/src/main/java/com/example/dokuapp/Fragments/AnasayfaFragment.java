@@ -1,5 +1,6 @@
 package com.example.dokuapp.Fragments;
 
+import android.app.ProgressDialog;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -41,7 +42,8 @@ public class AnasayfaFragment extends Fragment {
     private String metin;
     private String resim;
     private View view;
-    private ProgressBar pb;
+    private ProgressDialog progressDialog;
+    private ProgressBar progressBar;
 
     public AnasayfaFragment() {
 
@@ -51,13 +53,18 @@ public class AnasayfaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_anasayfa, container, false);
+        progressBar = view.findViewById(R.id.pdbar);
 
-        pb = view.findViewById(R.id.pdbar);
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Yükleniyor...");
+        progressDialog.show();
 
         firestore.collection("Anasayfa Itemleri").document("İtemler").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()){
+                    progressDialog.dismiss();
                    metin = String.valueOf(task.getResult().get("metin"));
                    resim = String.valueOf(task.getResult().get("resim"));
 
@@ -71,14 +78,15 @@ public class AnasayfaFragment extends Fragment {
                     Glide.with(getContext()).load(resim).listener(new RequestListener<Drawable>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                            pb.setVisibility(View.GONE);                            return false;
+                            progressBar.setVisibility(View.VISIBLE);
+                            return false;
                         }
 
                         @Override
                         public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                            pb.setVisibility(View.GONE);                            return false;            }
+                            progressBar.setVisibility(View.GONE);
+                            return false;            }
                     }).apply(new RequestOptions().override(400,400)).into(imageView);
-
 
                 }
             }

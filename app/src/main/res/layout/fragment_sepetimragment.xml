@@ -10,6 +10,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/bosyazi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Henüz Sepette Ürün Yok."
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sepet_recyclerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sepet_recyclerview"
             android:layout_width="match_parent"

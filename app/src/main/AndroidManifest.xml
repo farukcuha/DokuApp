@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SiparisAyrinti" />
-        <activity android:name=".Urun.UrunAyrinti" />
-        <activity android:name=".DokuAnasayfaActivity" />
+        <activity android:name=".Login.BaslangicActivity"/>
+        <activity android:name=".Activities.SiparisAyrinti" />
+        <activity android:name=".Activities.UrunAyrinti" />
+        <activity android:name=".Activities.DokuAnasayfaActivity" />
         <activity android:name=".Login.KaydolActivity" />
         <activity android:name=".Login.GirisYapActivity" />
-        <activity android:name=".Login.BaslangicActivity">
+        <activity android:name=".Activities.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

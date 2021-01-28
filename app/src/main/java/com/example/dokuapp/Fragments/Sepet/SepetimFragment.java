@@ -41,15 +41,14 @@ public class SepetimFragment extends Fragment {
     private TextView sepetfiyattoplam;
     public Button btndevam;
     private int total = 0;
-
-
-
+    private TextView emptyText;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_sepetimragment, container, false);
         final TextView sepetfiyattoplam = view.findViewById(R.id.sepettoplamfiyat);
+        emptyText = view.findViewById(R.id.bosyazi);
 
         Query query1 = db.collection("Kullanıcılar").document(kullaniciId)
                 .collection("Sepet").orderBy("sepetUrunToplamFiyat");
@@ -64,9 +63,16 @@ public class SepetimFragment extends Fragment {
                 total = 0;
             }
         });
+
+        if(emptyText.isCursorVisible()){
+            sepetfiyattoplam.setText("");
+        }
+
         setuUpRecyclerView(view);
         return view;
     }
+
+
     public void setuUpRecyclerView(View v){
         Query query = collectionReference.orderBy("sepetUrunAdi", Query.Direction.ASCENDING);
 
@@ -75,7 +81,7 @@ public class SepetimFragment extends Fragment {
                 .build();
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        adapter  = new SepetAdapter(options);
+        adapter  = new SepetAdapter(options, emptyText);
 
         recyclerView = v.findViewById(R.id.sepet_recyclerview);
         sepetfiyattoplam = v.findViewById(R.id.sepettoplamfiyat);

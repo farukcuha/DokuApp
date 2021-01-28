@@ -1,45 +1,35 @@
-package com.example.dokuapp;
+package com.example.dokuapp.Activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.dokuapp.Adapters.SiparişAyrintiAdapter;
+import com.example.dokuapp.R;
 import com.example.dokuapp.Values.SepetUrun;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class SiparisAyrinti extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
-    private String siparisId;
     private SiparişAyrintiAdapter adapter;
     private TextView siparisDurumu, siparisTutari, siparisTarihi, siparisNo, kargoNo, kargoFirma;
     private TextView adresBaslik, adresAdSoyad, adres, adresIlIlce, adresTelno;
     private ProgressDialog progressDialog;
     private LinearLayout kargo1, kargo2;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +44,7 @@ public class SiparisAyrinti extends AppCompatActivity {
         setUpRecyclerView(siparisId);
         siparisSorgula(siparisId);
 
-
     }
-
     private void adresSorgula(String siparisId) {
         FirebaseFirestore.getInstance().collection("Siparişler").document(siparisId)
                 .collection("Adres").document("adres")
@@ -79,11 +67,6 @@ public class SiparisAyrinti extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
     private void siparisSorgula(final String siparisId) {
