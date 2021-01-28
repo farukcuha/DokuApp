@@ -48,6 +48,8 @@ public class AdresFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_adres, container, false);
         pd = new ProgressDialog(view.getContext());
+        pd.setMessage("Yükleniyor...");
+        pd.setCancelable(false);
         final CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("Kullanıcılar").
                 document(kullaniciId).collection("Adresler");
 

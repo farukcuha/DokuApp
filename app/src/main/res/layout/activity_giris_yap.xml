@@ -13,11 +13,11 @@
 
 
     <ImageView
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="80dp"
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/dokulogo" />
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/icon" />
 
     <LinearLayout
         android:id="@+id/xml_linearlayout_girisemail"
