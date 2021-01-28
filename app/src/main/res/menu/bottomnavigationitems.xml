@@ -9,10 +9,10 @@
         android:icon="@drawable/sepetim"
         android:title="Sepetim"/>
     <item
+
         android:id="@+id/dokuanasayfa_item"
         android:icon="@drawable/home"
-        android:title="DOKÜ"
-        />
+        android:title="Ana Sayfa" />
     <item
         android:id="@+id/siparislerim_item"
         android:icon="@drawable/siparislerim"
