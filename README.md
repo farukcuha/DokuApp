@@ -13,6 +13,10 @@ Main Screen|
 :-------------------------:
 <img src="/img/mainscreen.png" width="300">|
 
+<img src="/img/mainscreen.png" width="300"> <img src="/img/mainscreen.png" width="300">|
+
+
+
 
 
 
