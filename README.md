@@ -27,7 +27,7 @@ Cart                                   | Adress                                 
 :-------------------------------------:|:--------------------------------------:|:---------------------------------------------:
 <img src="/img/mycart.png" width="300">| <img src="/img/address.png" width="300">|<img src="/img/order summary.png" width="300">
 
-+As you see below it is "Siparişlerim" page where you can see your order situation with their details.
++ As you see below it is "Siparişlerim" page where you can see your order situation with their details.
 
 Orders                                 |Order Details 1                         | Order Details 2
 :-------------------------------------:|:--------------------------------------:|:-----------------:
