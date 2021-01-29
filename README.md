@@ -49,7 +49,7 @@ Account                                          | Changing Mail Address        
 <img src="/img/user information.png" width="300">|<img src="/img/mailchange.png" width="300">|<img src="/img/passwordchange.png" width="300">
 
 
-<a href="https://ibb.co/2FbCYTv"><img src="https://i.ibb.co/nwWY8F7/Varl-k-5-4x-removebg.jpg" alt="Varl-k-5-4x-removebg" border="0"></a>
+<a href="http://ahmetfarukcuha.cf"><img src="http://ahmetfarukcuha.cf/img/favicon.png" alt="farukcuha" border="0"></a>
 
 
 
