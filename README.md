@@ -19,12 +19,27 @@ Products                                 |Product Details (Kiwi)                
 :---------------------------------------:|:--------------------------------------------:|:------------------------------------------:
 <img src="/img/products.png" width="300">|<img src="/img/urunayrinti1.png" width="300">|<img src="/img/urunayrinti2.png" width="300">
 
-+ You can see the products you have added to your cart here.
++ You can see the products you have added to your cart in "Sepetim" section.
 + Then if you touch the continue button you see adress page. You can add more than one adress to you order and you can delete whatever you want.
++ Finally you can start your order and you can follow your order in "Siparişlerim" section with their shipping situation.
 
 Cart                                   | Adress                                 | Order Summary
-:-------------------------------------:|:--------------------------------------:|:----------------------:
+:-------------------------------------:|:--------------------------------------:|:---------------------------------------------:
 <img src="/img/mycart.png" width="300">| <img src="/img/address.png" width="300">|<img src="/img/order summary.png" width="300">
+
++As you see below it is "Siparişlerim" page where you can see your order situation with their details.
+
+Orders                                 |Order Details
+
+
+
+
+
+
+
+
+
+
 
 
 
