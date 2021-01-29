@@ -21,9 +21,9 @@ Products                                 |Product Details (Kiwi)                
 
 + You can see the products you have added to your cart here.
 
-Cart|
+Cart||
 :-----------------------:|:------------------------:|:----------------------:
-<img src="/img/mycart.png" width="300">
+<img src="/img/mycart.png" width="300">||
 
 
 
