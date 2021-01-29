@@ -20,10 +20,11 @@ Products                                 |Product Details (Kiwi)                
 <img src="/img/products.png" width="300">|<img src="/img/urunayrinti1.png" width="300">|<img src="/img/urunayrinti2.png" width="300">
 
 + You can see the products you have added to your cart here.
++ Then if you touch the continue button you see adress page. You can add more than one adress to you order and you can delete whatever you want.
 
-Cart||
-:-----------------------:|:------------------------:|:----------------------:
-<img src="/img/mycart.png" width="300">||
+Cart                                   | Adress                                 | Order Summary
+:-------------------------------------:|:--------------------------------------:|:----------------------:
+<img src="/img/mycart.png" width="300">| <img src="/img/address.png" width="300">|<img src="/img/ordercsummary.png" width="300">
 
 
 
