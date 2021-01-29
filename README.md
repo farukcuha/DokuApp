@@ -4,9 +4,9 @@
 > The technologys I use in this project
 >
 >> Firestore Database
->> Firebase Storage
->> Firebase Authentication
->> Glide
+> Firebase Storage
+> Firebase Authentication
+> Glide
 
 + Users authentication method is made with Firebase by e-mail and password.
 
