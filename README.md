@@ -7,7 +7,7 @@ I developed "Olivmon" android app that is an e-commerce app. I used Cloud Firest
   * Firebase Authentication
   * Glide
 
-<br/>
+
 ---
 
 + Users authentication method is made with Firebase by e-mail and password.
