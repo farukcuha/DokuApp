@@ -33,7 +33,7 @@ Orders                                 |Order Details 1                         
 :-------------------------------------:|:--------------------------------------:|:-----------------:
 <img src="/img/my orders.png" width="300">|<img src="/img/orderdetails.png" width="300">|<img src="/img/orderdetails2.png" width="300">
 
-+ If you want to delete your account or to signout you can do this in "Hesabım" section. Additionally you can change your mail address or password here.
++ If you want to delete your account or signout you can do this in "Hesabım" section. Additionally you can change your mail address or password here.
 
 Account                                          | Changing Mail Address                           | Changing Password
 :-----------------------------------------------:|:-----------------------------------------------:|:-----------------------------------------------:
