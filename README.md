@@ -48,7 +48,7 @@ Account                                          | Changing Mail Address        
 :-----------------------------------------------:|:-----------------------------------------------:|:-----------------------------------------------:
 <img src="/img/user information.png" width="300">|<img src="/img/mailchange.png" width="300">|<img src="/img/passwordchange.png" width="300">
 
-<div style="text-align: center;">
+<div style="align-items: center;">
     <img src="https://i.ibb.co/nwWY8F7/Varl-k-5-4x-removebg.jpg" alt="icon">
 
 </div>
