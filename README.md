@@ -29,7 +29,9 @@ Cart                                   | Adress                                 
 
 +As you see below it is "Siparişlerim" page where you can see your order situation with their details.
 
-Orders                                 |Order Details
+Orders                                 |Order Details 1                         | Order Details 2
+:-------------------------------------:|:--------------------------------------:|:-----------------:
+<img src="/img/my orders.png" width="300">|<img src="/img/orderdetails.png" width="300">|<img src="/img/orderdetails2.png" width="300">
 
 
 
