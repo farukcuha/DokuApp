@@ -1,7 +1,7 @@
 # OlivmonApp
-I developed "Olivmon" android app that is an e-commerce app. I used Cloud Firestore as database and Glide as Image loader. I worked with Android Studio to develop the app and Adobe XD to make UI design. You can see different displays with explanations below.
+#### I developed "Olivmon" android app that is an e-commerce app. I used Cloud Firestore as database and Glide as Image loader. I worked with Android Studio to develop the app and Adobe XD to make UI design. You can see different displays with explanations below.
 
-
+> The technologys I use
 
 + Users authentication method is made with Firebase by e-mail and password.
 
