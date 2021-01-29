@@ -4,7 +4,7 @@
 > The technologys I use in this project
 >
 >> Firestore Database
-> Firebase Storage
+>>> Firebase Storage
 > Firebase Authentication
 > Glide
 
