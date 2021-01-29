@@ -15,8 +15,8 @@ Main Screen|
 
 + All of products are here with their prices, shipping times and a images. If you click the product whatever you want you can see more information in product details and you can add the cart.   
 
-Products|
-:---------------:
+Products                                 |Product Details                               | Product Details 
+:---------------------------------------:|:--------------------------------------------:|:------------------------------------------:
 <img src="/img/products.png" width="300">|<img src="/img/urunayrinti1.png" width="300">|<img src="/img/urunayrinti2.png" width="300">
 
 
