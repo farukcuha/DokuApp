@@ -50,6 +50,7 @@ Account                                          | Changing Mail Address        
 
 <div align = "center">
     <img src="https://i.ibb.co/nwWY8F7/Varl-k-5-4x-removebg.jpg" alt="icon" width="75">
+    <br/>
     <a href="ahmetfarukcuha.cf">Linkedin</a>
 
 </div>
