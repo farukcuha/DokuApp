@@ -35,9 +35,9 @@ Orders                                 |Order Details 1                         
 
 + If you want to delete your account or to signout you can do this in "Hesabım" section. Additionally you can change your mail address or password here.
 
-Account|
-:--------------------------:|:--------------------------:
-<img src="/img/user information.png" width="300">|
+Account                                          | Changing Mail Address                           | Changing Password
+:-----------------------------------------------:|:-----------------------------------------------:|:-----------------------------------------------:
+<img src="/img/user information.png" width="300">|<img src="/img/mailchange.png" width="300">|<img src="/img/passwordchange.png" width="300">
 
 
 
