@@ -24,7 +24,7 @@ Products                                 |Product Details (Kiwi)                
 
 Cart                                   | Adress                                 | Order Summary
 :-------------------------------------:|:--------------------------------------:|:----------------------:
-<img src="/img/mycart.png" width="300">| <img src="/img/address.png" width="300">|<img src="/img/ordercsummary.png" width="300">
+<img src="/img/mycart.png" width="300">| <img src="/img/address.png" width="300">|<img src="/img/ordersummary.png" width="300">
 
 
 
