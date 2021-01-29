@@ -15,9 +15,15 @@ Main Screen|
 
 + All of products are here with their prices, shipping times and a images. If you click the product whatever you want you can see more information in product details and you can add the cart.   
 
-Products                                 |Product Details                               | Product Details 
+Products                                 |Product Details (Kiwi)                        | Product Details (Watermelon)
 :---------------------------------------:|:--------------------------------------------:|:------------------------------------------:
 <img src="/img/products.png" width="300">|<img src="/img/urunayrinti1.png" width="300">|<img src="/img/urunayrinti2.png" width="300">
+
++ You can see the products you have added to your cart here.
+
+Cart|
+:-----------------------:|:------------------------:|:----------------------:
+<img src="/img/mycart.png" width="300">
 
 
 
