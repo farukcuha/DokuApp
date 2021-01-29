@@ -49,6 +49,9 @@ Account                                          | Changing Mail Address        
 <img src="/img/user information.png" width="300">|<img src="/img/mailchange.png" width="300">|<img src="/img/passwordchange.png" width="300">
 
 
+<img src="http://ahmetfarukcuha.cf/img/favicon.png" width="300">
+
+
 
 
 
