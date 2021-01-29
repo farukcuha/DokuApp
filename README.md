@@ -47,12 +47,9 @@ Orders                                 |Order Details 1                         
 Account                                          | Changing Mail Address                           | Changing Password
 :-----------------------------------------------:|:-----------------------------------------------:|:-----------------------------------------------:
 <img src="/img/user information.png" width="300">|<img src="/img/mailchange.png" width="300">|<img src="/img/passwordchange.png" width="300">
-
+---
 <div align = "center">
     <img src="https://i.ibb.co/nwWY8F7/Varl-k-5-4x-removebg.jpg" alt="icon" width="75">
-    <br/>
-    <a href="ahmetfarukcuha.cf">Linkedin</a>
-
 </div>
 
 
